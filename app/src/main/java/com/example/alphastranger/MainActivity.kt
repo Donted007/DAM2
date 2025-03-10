@@ -82,13 +82,19 @@ fun StrangerBookApp(modifier: Modifier = Modifier) {
         Profile("Lucas", R.drawable.lucas)
     )
 
-    val posts = remember {
-        mutableStateListOf(
-            Post("Eleven", R.drawable.eleven, R.drawable.snow, "Un beau jour à Hawkins sur La Glace ❄️", 12),
-            Post("Eddie", R.drawable.eddie, R.drawable.father, "Rock and roll forever! 🤘", 8),
-            Post("Lucas", R.drawable.lucas, R.drawable.haircut, "Basket avec l'équipe ! 🏀", 5)
-        )
-    }
+    val posts = listOf(
+        Post("Eleven", R.drawable.eleven, R.drawable.snow, "Un beau jour à Hawkins sur La Glace ❄️ #ICE mood !"),
+        Post("Eddie", R.drawable.eddie, R.drawable.father, "Rock and roll forever! The best father one line 🤘"),
+        Post("Lucas", R.drawable.lucas, R.drawable.haircut, "Basket avec l'équipe ! Les cheveux de rêves 🏀✂️"),
+
+        Post("Eleven", R.drawable.eleven, R.drawable.grass, "Se perdre dans l'herbe, respirer la liberté 🌿✨"),
+        Post("Eddie", R.drawable.eddie, R.drawable.crush, "Ce regard... Est-ce que j'ai un crush ? 😳❤️"),
+        Post("Lucas", R.drawable.lucas, R.drawable.fireworks, "Feux d'artifice et souvenirs inoubliables 🎆🔥"),
+
+        Post("Eleven", R.drawable.eleven, R.drawable.marine, "La mer, le vent et moi... Moment parfait 🌊💙"),
+        Post("Eddie", R.drawable.eddie, R.drawable.roller, "Sur les roulettes, et toujours au top 🛼🔥"),
+        Post("Lucas", R.drawable.lucas, R.drawable.vecna, "Les ténèbres approchent... mais je suis prêt 💀⚡")
+    )
 
     LazyColumn(modifier = modifier.padding(16.dp)) {
         item {
@@ -179,7 +185,7 @@ fun PostItem(post: Post) {
                         painter = painterResource(id = R.drawable.like),
                         contentDescription = "Like"
                     )
-                    Spacer(modifier = Modifier.width(4.dp))
+                    Spacer(modifier = Modifier.width(2.dp))
                     Text("$likes")
                 }
                 Button(onClick = {  }) {
@@ -187,8 +193,8 @@ fun PostItem(post: Post) {
                         painter = painterResource(id = R.drawable.comment),
                         contentDescription = "Comment"
                     )
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text("Commenter")
+                    Spacer(modifier = Modifier.width(2.dp))
+                    Text("")
                 }
             }
         }
